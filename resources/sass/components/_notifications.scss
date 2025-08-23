@@ -1,0 +1,469 @@
+// Notifications and Toast Messages
+
+// Toast container
+.toast-container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 9999;
+  max-width: 400px;
+
+  @media (max-width: 576px) {
+    top: 0.5rem;
+    right: 0.5rem;
+    left: 0.5rem;
+    max-width: none;
+  }
+}
+
+// Toast messages
+.toast {
+  background: white;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+
+  .toast-header {
+    background: transparent;
+    border-bottom: 1px solid #e3e6f0;
+    padding: 0.75rem 1rem;
+
+    .toast-title {
+      font-weight: 600;
+      color: #5a5c69;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      i {
+        font-size: 1rem;
+      }
+    }
+
+    .btn-close {
+      padding: 0;
+      margin: 0;
+      opacity: 0.5;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .toast-body {
+    padding: 1rem;
+    color: #5a5c69;
+    line-height: 1.5;
+  }
+
+  // Toast variants
+  &.toast-success {
+    border-left: 4px solid #1cc88a;
+
+    .toast-header .toast-title i {
+      color: #1cc88a;
+    }
+  }
+
+  &.toast-error {
+    border-left: 4px solid #e74a3b;
+
+    .toast-header .toast-title i {
+      color: #e74a3b;
+    }
+  }
+
+  &.toast-warning {
+    border-left: 4px solid #f6c23e;
+
+    .toast-header .toast-title i {
+      color: #f6c23e;
+    }
+  }
+
+  &.toast-info {
+    border-left: 4px solid #36b9cc;
+
+    .toast-header .toast-title i {
+      color: #36b9cc;
+    }
+  }
+
+  &.toast-primary {
+    border-left: 4px solid #4e73df;
+
+    .toast-header .toast-title i {
+      color: #4e73df;
+    }
+  }
+}
+
+// Notification badges
+.notification-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  .badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e74a3b;
+    color: white;
+    border: 2px solid white;
+
+    &.badge-success {
+      background: #1cc88a;
+    }
+
+    &.badge-warning {
+      background: #f6c23e;
+    }
+
+    &.badge-info {
+      background: #36b9cc;
+    }
+
+    &.badge-primary {
+      background: #4e73df;
+    }
+  }
+}
+
+// Notification dropdown
+.notification-dropdown {
+  min-width: 320px;
+  max-height: 400px;
+  overflow-y: auto;
+
+  .dropdown-header {
+    background: #f8f9fc;
+    border-bottom: 1px solid #e3e6f0;
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    color: #5a5c69;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .header-title {
+      margin: 0;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .header-actions {
+      .btn {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
+      }
+    }
+  }
+
+  .notification-item {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #f8f9fc;
+    transition: all 0.2s ease;
+    cursor: pointer;
+
+    &:hover {
+      background: #f8f9fc;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .notification-content {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+
+      .notification-icon {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.875rem;
+        color: white;
+        flex-shrink: 0;
+
+        &.icon-success {
+          background: #1cc88a;
+        }
+
+        &.icon-error {
+          background: #e74a3b;
+        }
+
+        &.icon-warning {
+          background: #f6c23e;
+        }
+
+        &.icon-info {
+          background: #36b9cc;
+        }
+
+        &.icon-primary {
+          background: #4e73df;
+        }
+      }
+
+      .notification-details {
+        flex: 1;
+        min-width: 0;
+
+        .notification-title {
+          font-weight: 600;
+          color: #5a5c69;
+          margin: 0 0 0.25rem 0;
+          font-size: 0.875rem;
+          line-height: 1.3;
+        }
+
+        .notification-message {
+          color: #858796;
+          margin: 0 0 0.25rem 0;
+          font-size: 0.8rem;
+          line-height: 1.4;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        .notification-time {
+          color: #858796;
+          font-size: 0.75rem;
+          margin: 0;
+        }
+      }
+
+      .notification-status {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #858796;
+        flex-shrink: 0;
+        margin-top: 0.25rem;
+
+        &.status-unread {
+          background: #4e73df;
+        }
+
+        &.status-read {
+          background: #858796;
+        }
+      }
+    }
+  }
+
+  .dropdown-footer {
+    background: #f8f9fc;
+    border-top: 1px solid #e3e6f0;
+    padding: 0.75rem 1rem;
+    text-align: center;
+
+    .btn {
+      width: 100%;
+      font-size: 0.875rem;
+    }
+  }
+}
+
+// Inline notifications
+.inline-notification {
+  background: #f8f9fc;
+  border: 1px solid #e3e6f0;
+  border-radius: 0.35rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+
+  .notification-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    color: white;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+
+    &.icon-success {
+      background: #1cc88a;
+    }
+
+    &.icon-error {
+      background: #e74a3b;
+    }
+
+    &.icon-warning {
+      background: #f6c23e;
+    }
+
+    &.icon-info {
+      background: #36b9cc;
+    }
+
+    &.icon-primary {
+      background: #4e73df;
+    }
+  }
+
+  .notification-content {
+    flex: 1;
+
+    .notification-title {
+      font-weight: 600;
+      color: #5a5c69;
+      margin: 0 0 0.25rem 0;
+      font-size: 0.875rem;
+    }
+
+    .notification-message {
+      color: #858796;
+      margin: 0;
+      font-size: 0.875rem;
+      line-height: 1.4;
+    }
+  }
+
+  .notification-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: 0.5rem;
+
+    .btn {
+      padding: 0.25rem 0.5rem;
+      font-size: 0.75rem;
+    }
+  }
+
+  // Variants
+  &.notification-success {
+    background: rgba(28, 200, 138, 0.1);
+    border-color: rgba(28, 200, 138, 0.2);
+  }
+
+  &.notification-error {
+    background: rgba(231, 74, 59, 0.1);
+    border-color: rgba(231, 74, 59, 0.2);
+  }
+
+  &.notification-warning {
+    background: rgba(246, 194, 62, 0.1);
+    border-color: rgba(246, 194, 62, 0.2);
+  }
+
+  &.notification-info {
+    background: rgba(54, 185, 204, 0.1);
+    border-color: rgba(54, 185, 204, 0.2);
+  }
+
+  &.notification-primary {
+    background: rgba(78, 115, 223, 0.1);
+    border-color: rgba(78, 115, 223, 0.2);
+  }
+}
+
+// Notification animations
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.toast.show {
+  animation: slideInRight 0.3s ease-out;
+}
+
+.toast.hide {
+  animation: slideOutRight 0.3s ease-in;
+}
+
+// Responsive adjustments
+@media (max-width: 576px) {
+  .toast-container {
+    .toast {
+      margin-bottom: 0.25rem;
+
+      .toast-header {
+        padding: 0.5rem 0.75rem;
+
+        .toast-title {
+          font-size: 0.875rem;
+        }
+      }
+
+      .toast-body {
+        padding: 0.75rem;
+        font-size: 0.875rem;
+      }
+    }
+  }
+
+  .notification-dropdown {
+    min-width: 280px;
+
+    .notification-item {
+      padding: 0.5rem 0.75rem;
+
+      .notification-content {
+        gap: 0.5rem;
+
+        .notification-icon {
+          width: 1.75rem;
+          height: 1.75rem;
+          font-size: 0.8rem;
+        }
+
+        .notification-details {
+          .notification-title {
+            font-size: 0.8rem;
+          }
+
+          .notification-message {
+            font-size: 0.75rem;
+          }
+        }
+      }
+    }
+  }
+}

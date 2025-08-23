@@ -1,0 +1,538 @@
+// Alerts Component Styles
+// Enhanced alerts with better animations and styling
+
+.alert {
+  border: none;
+  border-radius: 0.35rem;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+
+  // Base alert styles
+  &.alert-success {
+    background: linear-gradient(135deg, #1cc88a, #17a673);
+    color: white;
+
+    .alert-link {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: underline;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  &.alert-danger {
+    background: linear-gradient(135deg, #e74a3b, #be2617);
+    color: white;
+
+    .alert-link {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: underline;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  &.alert-warning {
+    background: linear-gradient(135deg, #f6c23e, #dda20a);
+    color: white;
+
+    .alert-link {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: underline;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  &.alert-info {
+    background: linear-gradient(135deg, #36b9cc, #2a96a5);
+    color: white;
+
+    .alert-link {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: underline;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  &.alert-primary {
+    background: linear-gradient(135deg, #4e73df, #224abe);
+    color: white;
+
+    .alert-link {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: underline;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  &.alert-secondary {
+    background: linear-gradient(135deg, #858796, #6e707e);
+    color: white;
+
+    .alert-link {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: underline;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  &.alert-light {
+    background: linear-gradient(135deg, #f8f9fc, #eaecf4);
+    color: #5a5c69;
+    border: 1px solid #e3e6f0;
+
+    .alert-link {
+      color: #4e73df;
+      text-decoration: underline;
+
+      &:hover {
+        color: #224abe;
+      }
+    }
+  }
+
+  &.alert-dark {
+    background: linear-gradient(135deg, #5a5c69, #373840);
+    color: white;
+
+    .alert-link {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: underline;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  // Alert with icon
+  &.alert-with-icon {
+    padding-left: 3rem;
+
+    .alert-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.25rem;
+      opacity: 0.8;
+    }
+  }
+
+  // Alert with close button
+  &.alert-dismissible {
+    padding-right: 3rem;
+
+    .btn-close {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      color: #333;
+      opacity: 0.8;
+      font-size: 1.25rem;
+      padding: 0;
+      width: 1.75rem;
+      height: 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 1;
+        background: rgba(255, 255, 255, 1);
+        border-color: rgba(0, 0, 0, 0.2);
+        transform: translateY(-50%) scale(1.05);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      &::before {
+        content: '×';
+        font-size: 1.5rem;
+        line-height: 1;
+        font-weight: bold;
+      }
+    }
+  }
+
+  // Alert content
+  .alert-heading {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .alert-message {
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+
+  // Alert actions
+  .alert-actions {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+
+    .btn {
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+
+  // Alert progress bar
+  .alert-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.3);
+
+    .progress-bar {
+      height: 100%;
+      background: rgba(255, 255, 255, 0.8);
+      transition: width 0.3s ease;
+    }
+  }
+
+  // Alert with border accent
+  &.alert-border-left {
+    border-left: 4px solid;
+
+    &.alert-success {
+      border-left-color: #1cc88a;
+    }
+
+    &.alert-danger {
+      border-left-color: #e74a3b;
+    }
+
+    &.alert-warning {
+      border-left-color: #f6c23e;
+    }
+
+    &.alert-info {
+      border-left-color: #36b9cc;
+    }
+
+    &.alert-primary {
+      border-left-color: #4e73df;
+    }
+  }
+
+  // Alert with shadow
+  &.alert-shadow {
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.15);
+  }
+
+  // Alert with rounded corners
+  &.alert-rounded {
+    border-radius: 1rem;
+  }
+
+  // Alert with gradient text
+  &.alert-gradient-text {
+    background: transparent;
+    border: 2px solid;
+
+    &.alert-success {
+      border-color: #1cc88a;
+      color: #1cc88a;
+    }
+
+    &.alert-danger {
+      border-color: #e74a3b;
+      color: #e74a3b;
+    }
+
+    &.alert-warning {
+      border-color: #f6c23e;
+      color: #f6c23e;
+    }
+
+    &.alert-info {
+      border-color: #36b9cc;
+      color: #36b9cc;
+    }
+
+    &.alert-primary {
+      border-color: #4e73df;
+      color: #4e73df;
+    }
+  }
+}
+
+// Toast notifications
+.toast-container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1055;
+
+  .toast {
+    background: white;
+    border: none;
+    border-radius: 0.35rem;
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.15);
+    margin-bottom: 0.5rem;
+    min-width: 300px;
+
+    .toast-header {
+      background: #f8f9fc;
+      border-bottom: 1px solid #e3e6f0;
+      padding: 0.75rem 1rem;
+
+      .toast-title {
+        font-weight: 600;
+        color: #5a5c69;
+        margin-bottom: 0;
+      }
+
+      .btn-close {
+        background: transparent;
+        border: none;
+        color: #858796;
+        opacity: 0.7;
+        transition: opacity 0.3s ease;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    .toast-body {
+      padding: 1rem;
+      color: #5a5c69;
+    }
+  }
+}
+
+// Alert animations
+.alert {
+  animation: slideInRight 0.3s ease-out;
+
+  &.fade-out {
+    animation: slideOutRight 0.3s ease-in forwards;
+  }
+
+  &.fade-in {
+    animation: slideInRight 0.3s ease-out;
+  }
+}
+
+// Alert entrance animations
+.alert-enter {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.3s ease;
+}
+
+.alert-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.alert-exit {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.3s ease;
+}
+
+.alert-exit-active {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+// Alert stacking
+.alert-stack {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1055;
+  max-width: 400px;
+
+  .alert {
+    margin-bottom: 0.5rem;
+    animation: slideInRight 0.3s ease-out;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Responsive alerts
+@media (max-width: 768px) {
+  .alert {
+    padding: 0.75rem 1rem;
+
+    &.alert-with-icon {
+      padding-left: 2.5rem;
+
+      .alert-icon {
+        left: 0.75rem;
+        font-size: 1rem;
+      }
+    }
+
+    &.alert-dismissible {
+      padding-right: 2.5rem;
+
+      .btn-close {
+        right: 0.75rem;
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+    }
+  }
+
+  .toast-container {
+    top: 0.5rem;
+    right: 0.5rem;
+    left: 0.5rem;
+
+    .toast {
+      min-width: auto;
+      width: 100%;
+    }
+  }
+
+  .alert-stack {
+    right: 0.5rem;
+    left: 0.5rem;
+    max-width: none;
+  }
+}
+
+// Animation keyframes
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+// Alert with different entrance animations
+.alert.alert-slide-left {
+  animation: slideInLeft 0.3s ease-out;
+}
+
+.alert.alert-slide-up {
+  animation: slideInUp 0.3s ease-out;
+}
+
+.alert.alert-fade {
+  animation: fadeIn 0.3s ease-out;
+}
+
+// Alert with bounce effect
+.alert.alert-bounce {
+  animation: bounceIn 0.6s ease-out;
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

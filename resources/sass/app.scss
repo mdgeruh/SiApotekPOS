@@ -1,0 +1,28 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+// SB Admin 2 Custom Styles
+@import 'sb-admin-2';
+
+// Custom Components
+@import 'components/cards';
+@import 'components/buttons';
+@import 'components/forms';
+@import 'components/tables';
+
+@import 'components/modals';
+@import 'components/alerts';
+@import 'components/sidebar';
+@import 'components/topbar';
+@import 'components/dashboard';
+@import 'components/loading';
+@import 'components/charts';
+@import 'components/notifications';
+@import 'components/search';
+@import 'components/sales';

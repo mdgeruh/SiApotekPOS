@@ -1,0 +1,449 @@
+// Sales Components Styling
+
+.sales-form-container {
+    .search-results {
+        position: absolute;
+        z-index: 1000;
+        background: white;
+        width: 100%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border: 1px solid #dee2e6;
+        border-radius: 0.375rem;
+
+        .search-result-item {
+            transition: background-color 0.2s ease;
+
+            &:hover {
+                background-color: #f8f9fa;
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+
+    .selected-medicine {
+        border-left: 4px solid #28a745 !important;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+
+        .form-control:read-only {
+            background-color: #f8f9fa;
+            border-color: #dee2e6;
+        }
+    }
+
+    .cart-items {
+        margin-top: 2rem;
+
+        .table {
+            th {
+                background-color: #f8f9fa;
+                border-color: #dee2e6;
+                font-weight: 600;
+                color: #495057;
+            }
+
+            td {
+                vertical-align: middle;
+            }
+
+            .btn-sm {
+                padding: 0.25rem 0.5rem;
+                font-size: 0.875rem;
+            }
+        }
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+        border-color: #86b7fe;
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    }
+
+    .input-group-text {
+        background-color: #f8f9fa;
+        border-color: #dee2e6;
+        color: #6c757d;
+    }
+
+    .btn {
+        transition: all 0.2s ease;
+
+        &:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .btn-success {
+        &:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+    }
+}
+
+// Sales Index Page Styling
+.sales-index-container {
+    .card {
+        .card-header {
+            background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+
+            h6 {
+                color: white;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .table {
+        th {
+            background-color: #f8f9fa;
+            border-color: #dee2e6;
+            font-weight: 600;
+            color: #495057;
+        }
+
+        td {
+            vertical-align: middle;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            padding: 0.375rem 0.75rem;
+        }
+
+        .btn-group {
+            .btn {
+                margin-right: 0.25rem;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    .search-container {
+        .input-group {
+            .form-control {
+                border-right: 0;
+
+                &:focus {
+                    border-color: #86b7fe;
+                    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+                }
+            }
+
+            .btn-outline-secondary {
+                border-left: 0;
+
+                &:hover {
+                    background-color: #6c757d;
+                    border-color: #6c757d;
+                }
+            }
+        }
+    }
+}
+
+// Sales Show Page Styling
+.sales-show-container {
+    .card {
+        .card-header {
+            &.bg-primary {
+                background: linear-gradient(135deg, #4e73df 0%, #224abe 100%) !important;
+            }
+
+            &.bg-success {
+                background: linear-gradient(135deg, #1cc88a 0%, #13855c 100%) !important;
+            }
+        }
+    }
+
+    .table-borderless {
+        td {
+            padding: 0.5rem 0;
+            border: none;
+        }
+    }
+
+    .badge {
+        &.fs-6 {
+            font-size: 1rem !important;
+        }
+    }
+
+    .action-buttons {
+        .btn {
+            margin: 0 0.25rem;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+    .sales-form-container {
+        .row {
+            .col-lg-8,
+            .col-lg-4 {
+                margin-bottom: 1rem;
+            }
+        }
+
+        .search-results {
+            position: relative;
+            width: 100%;
+        }
+
+        .cart-items {
+            .table-responsive {
+                font-size: 0.875rem;
+            }
+        }
+    }
+
+    .sales-index-container {
+        .table-responsive {
+            font-size: 0.875rem;
+        }
+
+        .btn-group {
+            .btn {
+                padding: 0.25rem 0.5rem;
+                font-size: 0.75rem;
+            }
+        }
+    }
+}
+
+// Animation Classes
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-in {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+// Styling untuk tabel obat
+.medicine-cart-table {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+    thead th {
+        background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+        color: white;
+        border: none;
+        padding: 12px 8px;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+    }
+
+    tbody tr {
+        transition: all 0.2s ease;
+
+        &:hover {
+            background-color: #f8f9fa;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    }
+
+    .medicine-item-row {
+        border-left: 4px solid transparent;
+
+        &:hover {
+            border-left-color: #007bff;
+        }
+    }
+
+    tfoot {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+
+        td {
+            border-top: 2px solid #dee2e6;
+            padding: 16px 8px;
+        }
+    }
+}
+
+.medicine-info {
+    padding: 8px 0;
+
+    .medicine-name {
+        font-size: 1rem;
+        margin-bottom: 4px;
+        color: #2c3e50;
+    }
+
+    .medicine-code {
+        font-size: 0.8rem;
+        color: #6c757d;
+    }
+
+    .stock-warning {
+        font-size: 0.75rem;
+        margin-top: 4px;
+        animation: pulse 2s infinite;
+    }
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+.quantity-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .quantity-btn {
+        border-radius: 0;
+        border: 1px solid #dee2e6;
+        transition: all 0.2s ease;
+
+        &:hover:not(:disabled) {
+            background-color: #007bff;
+            border-color: #007bff;
+            color: white;
+        }
+
+        &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    }
+
+    .quantity-input {
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        text-align: center;
+        font-weight: 600;
+        min-width: 60px;
+    }
+}
+
+.price-input {
+    border-radius: 4px;
+    font-weight: 600;
+    color: #28a745;
+}
+
+.subtotal-display {
+    padding: 8px 0;
+}
+
+.remove-btn {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background-color: #dc3545;
+        border-color: #dc3545;
+        color: white;
+        transform: scale(1.1);
+    }
+}
+
+// Badge styling
+.badge {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+
+    &.bg-warning {
+        background-color: #ffc107 !important;
+        color: #212529 !important;
+    }
+
+    &.bg-success {
+        background-color: #28a745 !important;
+        color: white !important;
+    }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+    .medicine-cart-table {
+        font-size: 0.9rem;
+
+        thead th {
+            padding: 8px 4px;
+            font-size: 0.75rem;
+        }
+    }
+
+    .quantity-controls .input-group {
+        flex-direction: column;
+
+        .quantity-btn {
+            border-radius: 4px;
+            margin: 2px 0;
+        }
+
+        .quantity-input {
+            border-radius: 4px;
+            border: 1px solid #dee2e6;
+            margin: 2px 0;
+        }
+    }
+}
+
+// Cart items section
+.cart-items {
+    margin-top: 2rem;
+
+    h6 {
+        color: #2c3e50;
+        border-bottom: 2px solid #007bff;
+        padding-bottom: 8px;
+    }
+}
+
+// Selected medicine styling
+.selected-medicine {
+    border-left: 4px solid #28a745 !important;
+    background: linear-gradient(135deg, #f8fff9 0%, #e8f5e8 100%) !important;
+}

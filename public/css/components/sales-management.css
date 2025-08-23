@@ -1,0 +1,103 @@
+/* Sales Management Styles */
+.search-results {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #e3e6f0;
+    border-radius: 0.35rem;
+}
+
+.list-group-item {
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 1px solid #e3e6f0;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
+
+.list-group-item:hover {
+    background-color: #f8f9fa;
+    border-color: #007bff;
+}
+
+.list-group-item .badge {
+    transition: all 0.2s;
+}
+
+.list-group-item:hover .badge {
+    background-color: #0056b3;
+}
+
+.table th {
+    background-color: #f8f9fc;
+    border-color: #e3e6f0;
+    font-weight: 600;
+    color: #5a5c69;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+.form-control:focus {
+    border-color: #4e73df;
+    box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
+}
+
+.btn:focus {
+    box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
+}
+
+.badge {
+    font-size: 0.75rem;
+}
+
+/* Payment Form Styles */
+.payment-form .form-control {
+    border-radius: 0.5rem;
+    border: 2px solid #e3e6f0;
+    transition: all 0.3s ease;
+}
+
+.payment-form .form-control:focus {
+    border-color: #4e73df;
+    box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
+}
+
+.payment-form .input-group-text {
+    background-color: #f8f9fc;
+    border-color: #e3e6f0;
+    font-weight: 600;
+    color: #5a5c69;
+}
+
+/* Payment Input Validation */
+.payment-form .form-control.is-invalid {
+    border-color: #e74a3b;
+    box-shadow: 0 0 0 0.2rem rgba(231, 74, 59, 0.25);
+}
+
+.payment-form .form-control.is-valid {
+    border-color: #1cc88a;
+    box-shadow: 0 0 0 0.2rem rgba(28, 200, 138, 0.25);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .col-lg-4, .col-lg-8 {
+        margin-bottom: 1rem;
+    }
+    
+    .table-responsive {
+        font-size: 0.875rem;
+    }
+    
+    .btn-group .btn {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
+    }
+}
