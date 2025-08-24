@@ -1,0 +1,33 @@
+# Laravel specific files
+.env
+.env.*
+storage/
+bootstrap/cache/
+node_modules/
+vendor/
+tests/
+.git/
+.gitignore
+README.md
+*.log
+*.sqlite
+*.sqlite3
+
+# Build artifacts
+public/mix-manifest.json
+public/hot
+public/storage
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
